@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    container_name: app
+    environment:
+      - TZ=Asia/Tokyo
+    volumes:
+      - ./app:/app:cached
+    working_dir: /app
+    tty: true
+    ports:
+      - 8082:8080
+    mem_limit: 2048m

@@ -1,0 +1,26 @@
+{
+  "name": "spring-boot",
+  "dockerComposeFile": "../docker-compose.yml",
+  "workspaceFolder": "/app",
+  "service": "app",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "java.autobuild.enabled": true,
+        "java.codeGeneration.generateComments": true,
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.eclipse.downloadSources": true,
+        "java.maven.downloadSources": true,
+        "java.maven.updateSnapshots": true
+      },
+      "extensions": [
+        "formulahendry.auto-complete-tag",
+        "redhat.vscode-yaml",
+        "richardwillis.vscode-gradle-extension-pack",
+        "vmware.vscode-boot-dev-pack",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-lombok"
+      ]
+    }
+  }
+}
