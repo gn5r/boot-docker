@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  app:
+    image: openjdk:17-buster
+    container_name: uhbrhs-app
+    tty: true
+    environment:
+      - TZ=Asia/Tokyo
+    depends_on:
+      - mysql
+    ports:
+      - 8888:8080
+    volumes:
+      - ../app/:/app:cached
+      - /app/.gradle
+      - /app/build
+    mem_limit: 2560m
+
+  mysql:
+    image: mysql:debian
+    container_name: uhbrhs-mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      - TZ=Asia/Tokyo
+      # - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=manager
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=dev
+      - MYSQL_DATABASE=uhbrhs
+    ports:
+      - 33306:3306
+    volumes:
+      - uhbrhs-dbdata:/var/lib/mysql
+      - ../initdb.d:/docker-entrypoint-initdb.d
+    mem_limit: 512m
+
+volumes:
+  uhbrhs-dbdata:
+    driver: local

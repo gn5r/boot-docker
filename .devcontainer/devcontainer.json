@@ -1,0 +1,33 @@
+{
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-complete-tag",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml",
+        "vmware.vscode-spring-boot",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-lombok"
+      ],
+      "settings": {
+        "editor.detectIndentation": false,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 2,
+        "files.autoGuessEncoding": true,
+        "files.exclude": {
+          "**/.classpath": false,
+          "**/.project": false,
+          "**/.settings": false,
+          "**/.factorypath": false,
+          "**/.git": false,
+          "**/bin": true
+        },
+        "java.configuration.updateBuildConfiguration": "automatic"
+      }
+    }
+  }
+}

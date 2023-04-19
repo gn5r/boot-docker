@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http: //www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <th:block th:insert="~{common/include :: bootstrap}" />
+  <style>
+    .application {
+      min-height: 100vh;
+      max-width: 100%;
+    }
+
+    .flex-basis-auto {
+      flex-basis: auto;
+    }
+  </style>
+  <title>おうちシステム | トップページ</title>
+</head>
+
+<body>
+  <div class="d-flex flex-grow-1 flex-shrink-1 flex-basis-auto application">
+    <div class="d-flex flex-grow-1 flex-shrink-0 flex-basis-auto align-items-center">
+      <main class="flex-grow-1 flex-shrink-0 flex-basis-auto w-100">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <div class="container-fluid">
+                <div class="row justify-content-end">
+                  <div class="col-2 text-end">
+                    <button class="btn btn-success">新規登録</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">key</th>
+                          <th scope="col">value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr th:each="item : ${list}">
+                          <td th:text="${item.key}"></td>
+                          <td th:text="${item.value}"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
