@@ -31,7 +31,8 @@ services:
       - 33306:3306
     volumes:
       - uhbrhs-dbdata:/var/lib/mysql
-      - ../initdb.d:/docker-entrypoint-initdb.d
+      - ../mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ../mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     mem_limit: 512m
 
 volumes:
